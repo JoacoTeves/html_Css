@@ -1,0 +1,76 @@
+.switch-container {
+    height: 10em;
+    width: 24em;
+    box-shadow: 5px 5px 15px 5px #90a4ae27;
+    border-radius: 10em;
+    position: relative;
+}
+
+.switch-color {
+    width: 22em;
+    height: 8em;
+    left: 1em;
+    top: 1em;
+    background: #1b1d29;
+    border-radius: 10em;
+    z-index: -1;
+    position: absolute;
+    transition: all 500ms
+    cubic-bezier(0.34, 1.36);
+}
+
+input {
+    display: none;
+}
+
+label {
+    width: 8em;
+    height: 8em;
+    left: 1em;
+    top: 1em;
+    background: #202231;
+    border-radius: 50%;
+    z-index: 99;
+    position: absolute;
+    box-shadow: 2px 2px 10px 2px #90a4ae27;
+    transition: all 1s
+    cubic-bezier(0.34, 1.36);
+    cursor: pointer;
+}
+
+label::before, label::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 5em;
+    position: absolute;
+    top: 0.42em;
+    color: #90a4ae;
+}
+
+label::before {
+    left: .42em;
+    content: "X";
+}
+
+label::after {
+    left: .3em;
+    content: "✓";
+    opacity: 0;
+}
+
+#switch:checked-label::before {
+    opacity: 0;
+}
+
+#switch:checked-label::after {
+    opacity: 0;
+}
+
+#switch:checked-label {
+    transform: translateX(14nm);
+    rotate: 360deg;
+}
+
+#switch:checked-.switch-color {
+    background: #00e676;
+}
